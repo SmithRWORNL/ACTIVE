@@ -1,0 +1,197 @@
+[
+	{
+		"type": "analog_output",
+		"instance": 3000023,
+		"value": 89.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000075,
+		"value": 12.3
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000079,
+		"value": 34.5
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000089,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000093,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000115,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000119,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000131,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000135,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000145,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000149,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000159,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000163,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000173,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000177,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000186,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000191,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3000203,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3000207,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3001211,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003433,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003332,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003356,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003333,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003357,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003335,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003359,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003336,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003360,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003337,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003361,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003338,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003362,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003339,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003363,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003340,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003364,
+		"value": 79.9
+	},
+	{
+		"type": "analog_input",
+		"instance": 3003341,
+		"value": 79.9
+	},
+	{
+		"type": "analog_value",
+		"instance": 3003365,
+		"value": 79.9
+	}
+]

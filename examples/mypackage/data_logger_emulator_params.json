@@ -1,0 +1,95 @@
+{
+    "/" : [
+        {
+            "method": "GET", 
+            "query parameters": {
+                "command": "dataquery",
+                "uri": "dl:public.T_out",
+                "format": "json",
+                "mode": "most-recent"
+            },
+            "content-type": "application/json",
+            "content": {
+                "head": {"transaction": 0,"signature": 49178,"environment":  {"station_name":  "7903","table_name":  "Public","model":  "CR3000","serial_no":  "7903","os_version":  "CR3000.Std.32.05","prog_name":  "CPU:FRP_4_Cabinets_110421.CR3"},"fields":  [{"name":  "T_out","type":  "xsd:float","units":  "degF","settable":  true}]},"data": [
+{"time":  "2023-10-02T12:31:50.19","no":  2715,"vals": [79.42326]}]
+            }
+        },
+        {
+            "method": "GET", 
+            "query parameters": {
+                "command": "dataquery",
+                "uri": "dl:public.AirACFM_RTU_Tot",
+                "format": "json",
+                "mode": "most-recent"
+            },
+            "content-type": "application/json",
+            "content": {
+                "head": {"transaction": 0,"signature": 49178,"environment":  {"station_name":  "7903","table_name":  "Public","model":  "CR3000","serial_no":  "7903","os_version":  "CR3000.Std.32.05","prog_name":  "CPU:FRP_4_Cabinets_110421.CR3"},"fields":  [{"name":  "AirACFM_RTU_Tot","type":  "xsd:float","units":  "ACFM","settable":  true}]},"data": [
+{"time":  "2023-10-02T12:33:54.92","no":  2720,"vals": [2762.844]}]
+            }
+        },
+        {
+            "method": "GET", 
+            "query parameters": {
+                "command": "dataquery",
+                "uri": "dl:public.T_Sup_tot",
+                "format": "json",
+                "mode": "most-recent"
+            },
+            "content-type": "application/json",
+            "content": {
+                "head": {"transaction": 0,"signature": 49178,"environment":  {"station_name":  "7903","table_name":  "Public","model":  "CR3000","serial_no":  "7903","os_version":  "CR3000.Std.32.05","prog_name":  "CPU:FRP_4_Cabinets_110421.CR3"},"fields":  [{"name":  "T_Sup_tot","type":  "xsd:float","units":  "Deg F","settable":  true}]},"data": [
+{"time":  "2023-10-02T12:35:15.78","no":  2722,"vals": [54.62486]}]
+            }
+        },
+        {
+            "method": "GET", 
+            "query parameters": {
+                "command": "dataquery",
+                "uri": "dl:public.RH_Sup_tot",
+                "format": "json",
+                "mode": "most-recent"
+            },
+            "content-type": "application/json",
+            "content": {
+                "head": {"transaction": 0,"signature": 49178,"environment":  {"station_name":  "7903","table_name":  "Public","model":  "CR3000","serial_no":  "7903","os_version":  "CR3000.Std.32.05","prog_name":  "CPU:FRP_4_Cabinets_110421.CR3"},"fields":  [{"name":  "RH_Sup_tot","type":  "xsd:float","units":  "%RH","settable":  true}]},"data": [
+{"time":  "2023-10-02T12:36:51.83","no":  2725,"vals": [95.7323]}]
+            }
+        },
+        {
+            "method": "GET", 
+            "query parameters": {
+                "command": "dataquery",
+                "uri": "dl:public.T_Room_",
+                "format": "json",
+                "mode": "most-recent"
+            },
+            "content-type": "application/json",
+            "content": {
+                "head": {"transaction": 0,"signature": 49178,"environment":  {"station_name":  "7903","table_name":  "Public","model":  "CR3000","serial_no":  "7903","os_version":  "CR3000.Std.32.05","prog_name":  "CPU:FRP_4_Cabinets_110421.CR3"},"fields":  [{"name":  "T_Room_102","type":  "xsd:float","units":  "Deg F","settable":  true}]},"data": [
+{"time":  "2023-10-02T12:38:20.11","no":  2728,"vals": [70.35758]}]
+            }
+        },
+        {
+            "method": "GET", 
+            "query parameters": {
+                "command": "dataquery",
+                "uri": "dl:public.RH_Return_",
+                "format": "json",
+                "mode": "most-recent"
+            },
+            "content-type": "application/json",
+            "content": {
+                "head": {"transaction": 0,"signature": 49178,"environment":  {"station_name":  "7903","table_name":  "Public","model":  "CR3000","serial_no":  "7903","os_version":  "CR3000.Std.32.05","prog_name":  "CPU:FRP_4_Cabinets_110421.CR3"},"fields":  [{"name":  "T_Room_102","type":  "xsd:float","units":  "Deg F","settable":  true}]},"data": [
+{"time":  "2023-10-02T12:38:20.11","no":  2728,"vals": [70.35758]}]
+            }
+        }
+    ],
+"/test": [
+	{
+		"query parameters": {},
+		"content-type": "application/json",
+		"content": { "value": "Test Value = 1"}
+	}
+]
+}

@@ -1,0 +1,76 @@
+{
+	"extension directories": [
+		"/build/examples/mypackage"
+	],
+	"controllers": [
+		{
+			"name": "Logger",
+			"type": "HTTP",
+			"parameters": {
+				"url": "http://localhost:8008"
+			}
+		}
+	],
+	"data stores": [
+		{
+			"name": "LocalStorage",
+			"type": "File System",
+			"parameters": {
+				"path": "/data"
+			}
+		}
+	],
+	"emulators": [
+		{
+			"name": "Device1",
+			"type": "BACnet Emulator",
+			"parameters": {
+				"address": "127.17.0.101/24",
+				"port": 47808,
+				"device_objects": "!ACTIVE:!FILE-json:/build/examples/mypackage/bacnet_emulator_params.json"
+			}
+		},
+		{
+			"name": "DataLogger1",
+			"type": "HTTP",
+			"parameters": {
+				"port": 8008,
+				"data": "!ACTIVE:!FILE-json:/build/examples/mypackage/data_logger_emulator_params.json"
+			}
+		}
+	],
+	"agents": [
+		{
+			"name": "MachineLearning",
+			"type": "simple",
+			"parameters":{
+				"num_episodes": 1
+			},
+			"strategy": {
+				"type": "My Strategy",
+				"parameters":{
+					"api": "!ACTIVE:Logger"
+				}
+			}
+		}
+	],
+	"tests" : [
+		[
+			{
+				"action": "wait",
+				"seconds": 1
+			},
+			{
+				"action": "function",
+				"type": "my test",
+				"parameters": {
+					"controller": "!ACTIVE:Logger"
+				}
+			},
+			{
+				"action": "start",
+				"component": "MachineLearning"
+			}
+		]
+	]
+}

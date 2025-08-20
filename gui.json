@@ -1,0 +1,22 @@
+{
+	"GUI": true,
+	"extension directories": [
+	],
+	"controllers": [
+	],
+	"data stores": [
+		{
+			"name": "Files",
+			"type": "File System",
+			"parameters": {
+				"path": "/data"
+			}
+		}
+	],
+	"emulators": [
+	],
+	"agents": [
+	],
+	"tests" : [
+	]
+}

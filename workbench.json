@@ -1,0 +1,123 @@
+{
+	"GUI": true,
+	"extension directories": [
+	],
+	"controllers": [
+	],
+	"data stores": [
+		{
+			"name": "Database",
+			"type": "Postgres",
+			"parameters": {
+				"database": "postgres",
+				"host": "postgres",
+				"password": "postgrespassword",
+				"port": "5432",
+				"schema": {
+					"data_logger": {
+						"charging_voltage": "decimal",
+						"discharging_voltage": "decimal",
+						"charge_current_phase_A": "decimal",
+						"discharge_current_phase_A": "decimal",
+						"charge_current_phase_B": "decimal",
+						"discharge_current_phase_B": "decimal",
+						"charge_power": "decimal",
+						"discharge_power": "decimal",
+						"charging_net_energy": "decimal",
+						"discharging_net_energy": "decimal",
+						"charging_reactive_power": "decimal",
+						"discharging_reactive_power": "decimal",
+						"charging_apparent_power": "decimal",
+						"discharging_apparent_power": "decimal",
+						"charge_power_factor": "decimal",
+						"discharge_power_factor": "decimal",
+						"outside_temperature": "decimal",
+						"level_1_thermostat_location_temperature": "decimal",
+						"level_2_thermostat_location_temperature": "decimal",
+						"whole_house_energy": "decimal",
+						"measurement_taken": "timestamp"
+					},
+					"solar_inverter": {
+						"aggregate_photovoltaic_power": "integer",
+						"backup_charge": "integer",
+						"battery_1_capacity": "integer",
+						"battery_2_capacity": "integer",
+						"battery_1_charge_energy_total": "integer",
+						"battery_2_charge_energy_total": "integer",
+						"battery_1_charge_power": "integer",
+						"battery_2_charge_power": "integer",
+						"battery_1_current": "integer",
+						"battery_2_current": "integer",
+						"battery_1_discharge_energy_total": "integer",
+						"battery_2_discharge_energy_total": "integer",
+						"battery_1_discharge_power": "integer",
+						"battery_2_discharge_power": "integer",
+						"battery_1_state": "text",
+						"battery_2_state": "text",
+						"battery_1_state_of_charge": "integer",
+						"battery_2_state_of_charge": "integer",
+						"battery_1_statuses": "text",
+						"battery_2_statuses": "text",
+						"battery_1_voltages": "integer",
+						"battery_2_voltages": "integer",
+						"charge_end": "timestamp",
+						"charge_power": "integer",
+						"charge_start": "timestamp",
+						"discharge_end": "timestamp",
+						"discharge_power": "integer",
+						"discharge_start": "timestamp",
+						"energy_consumption": "integer",
+						"grid_energy_bought": "integer",
+						"load_power": "integer",
+						"measurement_taken": "timestamp",
+						"pcs_op_mode": "text",
+						"photovoltaic_1_average_currents": "integer",
+						"photovoltaic_2_average_currents": "integer",
+						"photovoltaic_3_average_currents": "integer",
+						"photovoltaic_1_average_voltages": "integer",
+						"photovoltaic_2_average_voltages": "integer",
+						"photovoltaic_3_average_voltages": "integer",
+						"photovoltaic_energy_today": "integer",
+						"photovoltaic_energy_total": "integer",
+						"sn": "text",
+						"stat": "integer",
+						"state_of_health": "integer",
+						"grid_on": "bool"
+					},
+					"water_heater": {
+						"available_capacity": "decimal",
+						"measurement_taken": "timestamp",
+						"override": "integer",
+						"power": "decimal",
+						"state": "integer",
+						"total_capacity": "decimal"
+					}
+				},
+				"user": "postgres"
+			}	
+		}
+	],
+	"emulators": [
+	],
+	"agents": [
+		{
+			"name": "DataCollection",
+			"type": "simple",
+			"parameters":{
+				"delay": 60,
+				"num_episodes": 0
+			},
+			"strategy": {
+				"type": "My Strategy",
+				"parameters":{
+					"water_heater": "!ACTIVE:WaterHeater",
+					"data_logger": "!ACTIVE:DataLogger",
+					"data_store": "!ACTIVE:Database",
+					"inverter": "!ACTIVE:Inverter"
+				}
+			}
+		}
+	],
+	"tests" : [
+	]
+}

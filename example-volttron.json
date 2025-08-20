@@ -1,0 +1,59 @@
+{
+	"extension directories": [
+		"/build/mypackage"
+	],
+	"controllers": [
+		{
+			"name": "Logger",
+			"type": "HTTP",
+			"parameters": {
+				"url": "http://localhost:8008"
+			}
+		}
+	],
+	"data stores": [
+		{
+			"name": "LocalStorage",
+			"type": "File System",
+			"parameters": {
+				"path": "/data"
+			}
+		}
+	],
+	"emulators": [
+		{
+			"name": "Device1",
+			"type": "BACnet",
+			"parameters": {
+				"address": "127.17.0.101/24",
+				"port": 47808,
+				"device_objects": "!ACTIVE:!FILE-json:/build/mypackage/bacnet_emulator_params.json"
+			}
+		},
+		{
+			"name": "DataLogger1",
+			"type": "HTTP",
+			"parameters": {
+				"port": 8008,
+				"data": "!ACTIVE:!FILE-json:/build/mypackage/data_logger_emulator_params.json"
+			}
+		}
+	],
+	"agents": [
+		{
+			"name": "MachineLearning",
+			"type": "volttron",
+			"parameters":{
+				"schedule": {
+					"step": 5
+				}
+			},
+			"strategy": {
+				"type": "My Strategy",
+				"parameters":{
+					"api": "!ACTIVE:Logger"
+				}
+			}
+		}
+	]
+}
