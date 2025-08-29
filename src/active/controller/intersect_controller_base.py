@@ -35,7 +35,8 @@ class IntersectExecution():
         
         self.client = IntersectClient(
             config=client_config,
-            user_callback=self.handle_message
+            user_callback=self.handle_message,
+            event_callback=self._event_callback
         )
         
     def handle_message(
@@ -75,10 +76,21 @@ class IntersectExecution():
             # If the client is disconnected and can't recover, stop without 
             if self.client.considered_unrecoverable():
                 break
-            event.wait(30)
+            event.wait(1)
             
         self.client.shutdown(reason='Execution ended.')
         
+    def _event_callback(
+        self,
+        _source: str,
+        _operation: str,
+        _event_name: str,
+        payload: INTERSECT_JSON_VALUE,
+    ) -> None:
+        '''
+        Dummy event callback method solely to surpress the logging errors from INTERSECT.
+        '''
+        pass
 
 class IntersectControllerBase():
     '''
@@ -222,7 +234,7 @@ class IntersectControllerBase():
         
     def send(self, destination, operation, payload):
         '''
-        Send a message to an INTERSECT service and handle the reply.
+        Send a message to an INTERSECT service.
         
         Args:
             destination: String for the INTERSECT capability's unique name.
@@ -252,3 +264,37 @@ class IntersectControllerBase():
         thread = threading.Thread(target = execution.start)
         thread.daemon = True
         thread.start()
+        
+    def send_and_wait(self, destination, operation, payload):
+        '''
+        Send a message to an INTERSECT service and handle the reply.
+        
+        Args:
+            destination: String for the INTERSECT capability's unique name.
+            operation: String name of the operation to send the message to.
+            payload: Arbitrary payload to send as the message's data.
+        '''
+        
+        # Create an initial message consisting of the user defined message
+        initial_messages = [
+            IntersectDirectMessageParams(
+                destination=destination,
+                operation=operation,
+                payload=payload,
+            )
+        ]
+        
+        # Create the configuration with that initial message
+        config = IntersectClientConfig(
+            initial_message_event_config=IntersectClientCallback(
+                messages_to_send=initial_messages
+            ),
+            **self.intersect_configuration,
+        )
+        
+        # Create an execution for sending the message and launch it in a new thread
+        execution = IntersectExecution(config, self.handle_message)
+        thread = threading.Thread(target = execution.start)
+        #thread.daemon = True
+        thread.start()
+        thread.join()

@@ -32,6 +32,13 @@ class Server(BaseHTTPRequestHandler):
         
         self._handle_call("GET")
         
+    def do_POST(self):
+        '''
+        Handle post requests
+        '''
+        
+        self._handle_call("POST")
+        
     def do_PUT(self):
         '''
         Handle put requests
@@ -123,13 +130,13 @@ class Server(BaseHTTPRequestHandler):
             if not found:
                 self.send_response(404)
                 self.end_headers()
-                self.wfile.write({})          
+                self.wfile.write("")          
         
         # Path was not recognized, send a 404 response
         else:
             self.send_response(404)
             self.end_headers()
-            self.wfile.write({})
+            self.wfile.write("")
         
     
 class HTTPEmulatorBase():

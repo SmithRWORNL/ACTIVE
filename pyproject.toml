@@ -1,6 +1,6 @@
 [project]
-name = "Active"
-version = "1.4.2"
+name = "active_framework"
+version = "2.0.0"
 description = "Automated Control Testbed for Integration Verification and Emulation"
 authors = [
     {name = "Kadir Amasyali"},
