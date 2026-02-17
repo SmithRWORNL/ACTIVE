@@ -1,6 +1,6 @@
 # ACTIVE
 
-The Automated Control Testbed for Integration, Verification, and Emulation (ACTIVE) is operation management and algorithm testing software designed for building control.
+The Automated Control Testbed for Integration, Verification, and Emulation (ACTIVE) is operation management and algorithm testing software designed for building control. This framework can be used for AI-based control strategies, rule-based and model-based control strategies. The goal is to enable a seamless transition from simulation-based testing of the control strategies to their field validation .
 
 ## Installation
 
