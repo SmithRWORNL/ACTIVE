@@ -1,6 +1,29 @@
 # ACTIVE
 
-The Automated Control Testbed for Integration, Verification, and Emulation (ACTIVE) is operation management and algorithm testing software designed for building control. This framework can be used for AI-based control strategies, rule-based and model-based control strategies. The goal is to enable a seamless transition from simulation-based testing of the control strategies to their field validation .
+The Automated Control Testbed for Integration, Verification, and Emulation (ACTIVE) is operation management and algorithm testing software designed for building control. This framework can be used for AI-based control strategies, rule-based and model-based control strategies. The goal is to enable a seamless transition from simulation-based testing of the control strategies to their field validation.
+
+## Overview
+
+ACTIVE is used to perform deployment and testing of facility management research codes. The general use case involves wrapping business logic in ACTIVE Component subclasses, then creating one or more Environment files which define how those Components are to be deployed.
+
+![Diagram of two ACTIVE environments](images/ACTIVE_use_case.png)
+Above: An example of a project that used ACTIVE to handle code deployment. Each Environment contains a number of Components, each of which handle a specific part of the integration. Controllers perform calls to remote devices, Data Stores provide read and write access to long term data storage, and Strategies execute control logic. Note that not all the above Components are contained in ACTIVE, as some are project specific extensions.
+
+To prepare your code for use with ACTIVE, a minimal working product will consist of one custom ACTIVEStrategy subclass that contains the code to run and an Environment file that lists your code as an Extension and defines a Strategy of your custom type and an Agent to run it. From there, you can begin adding more Components or other ACTIVE features such as:
+
+- Controller, Data Store, or Multiplexer Components to interact with remote APIs.
+- Emulator Components to produce test servers that serve as digital twins to physical devices to run the Environment against.
+- Test steps to provide system level tests for Environment performance.
+- Additional Environment files to define alternate deployments (such as a local simulation Environment and a field validation Environment).
+- An ACTIVE Workbench web GUI instance to allow users to visualize and download results from Data Store Components.
+
+![ACTIVE Wokrbench displays data from an Environment's Components](images/ACTIVE_Workbench_screenshot.png)
+The ACTIVE Workbench provides web browser based access to results from a running Environment.
+
+### Example Tutorial
+
+You can find a tutorial for setting up ACTIVE Environments [here](https://github.com/SmithRWORNL/ACTIVE-INTERSECT-tutorial). The tutorial covers creating a single code base that can be run in multiple different Environments, using the INTERSECT framework as an example.
+
 
 ## Installation
 
